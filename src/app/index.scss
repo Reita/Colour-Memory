@@ -1,0 +1,295 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow,
+              $shadow,
+              $shadow,
+              $shadow;
+}
+
+body {
+  background: url(../assets/images/wallhaven-212482.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.cardContainer {
+  height: 100vh;
+  position: relative;
+  h1 {
+    width: 600px;
+    top: -100px;
+    position: absolute;
+    font-family: 'Lobster', cursive;
+    font-size: 5em;
+    color: #fff;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .jumbotron {
+    @include box-shadow(0px 0px 50px rgba(0,0,0,0.2));
+    background: rgba(255,255,255,0.2);
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    box-sizing: content-box;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      &.no-click {
+        pointer-events: none;
+      }
+      li {
+        display: block;
+        width: 142px;
+        height: 142px;
+        border-radius: 50%;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        float: left;
+        margin: 0 10px 10px 0;
+        box-shadow: inset 0px 0px 0px 10px rgba(0,0,0,0.5);
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        &.red {
+          background-image: linear-gradient(red, crimson);    
+        }
+        &.blue {
+          background-image: linear-gradient(left, rgb(0, 210, 255), rgb(58, 123, 213));    
+        }
+        &.green {
+          background-image: linear-gradient(left, rgb(33, 95, 0), rgb(228, 228, 217));    
+        }
+        &.purple {
+          background-image: linear-gradient(left, rgb(192, 72, 72), rgb(72, 0, 72));    
+        }
+        &.orange {
+          background-image: linear-gradient(left, rgb(254, 140, 0), rgb(248, 54, 0));    
+        }
+        &.yellow {
+          background-image: linear-gradient(left, rgb(255, 179, 71), rgb(255, 204, 51));    
+        }
+        &.pink {
+          background-image: linear-gradient(left, rgb(251, 211, 233), rgb(187, 55, 125));    
+        }
+        &.teal {
+          background-image: linear-gradient(left, rgb(115, 200, 169), rgb(55, 59, 68));    
+        }
+        &:nth-child(4n){
+          margin-right: 0;
+        }
+        &:focus, &:active, &.selected {
+          box-shadow: inset 0px 0px 0px 15px rgba(0,0,0,0.7);
+          &::before {
+            transition: all 0.5s linear;
+            opacity: 0;
+          }
+        }
+        &.disabled {
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.5s linear;
+        }
+        &:hover {
+          &::before {
+            box-shadow: inset 0px 0px 0px 15px rgba(0,0,0,1);
+          }
+        }
+        &::before {
+          box-shadow: inset 0px 0px 0px 15px rgba(0,0,0,0.5);
+          content: '';
+          padding: 71px;
+          border-radius: 50%;
+          background-image: linear-gradient(bottom, rgb(230, 218, 218), rgb(39, 64, 70));
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: all 0.5s linear;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.scoreBar, .submitForm {
+  font-family: 'PT Sans Narrow', sans-serif;
+  background-color: deeppink;
+  box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.3);
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  h2 {
+    margin: 20px 0 0 0;
+  }
+  h3 {
+    margin: 5px 0 20px 0;
+  }
+  p {
+    line-height: 2.4em;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+}
+
+.showResults {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-height: 420px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.1);
+  border-radius: 0 0 0 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.1em;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  cursor: pointer;
+  .table {
+    margin: 0 0 10px 20px;
+  }
+  h3 {
+    font-weight: bold;
+    padding: 0 0 0 20px;
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #ddd;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #666; 
+  }
+}
+
+div.debug {
+  width: 450px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.1em;
+  border-radius: 0 0 3px 0;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      float: left;
+      padding: 5px 10px 5px 10px;
+      border-left: 1px solid rgba(0,0,0,0.1);
+      &:nth-child(1) {
+        border: none;
+      }
+    }
+  }
+}
+
+.submitForm {
+  position: absolute;
+  bottom: 105px;
+  background: #000;
+  width: 100vw;
+  opacity: 1;
+  font-size: 2em;
+  transition: opacity 0.5s linear;
+  label {
+    display: inline-block;
+    background: #333;
+    padding:  10px 25px 10px 25px;
+    margin-bottom: 0;
+  }
+  .form-group {
+    &:hover {
+      #scoreName {
+        width: 15em;
+      }
+    }
+  }
+  #scoreName {
+    height: 59px;
+    border: 0;
+    background: #444;
+    border-radius: 0;
+    margin: -7px 0 0 -5px;
+    padding: 10px 25px 10px 25px;
+    width: 15em;
+    transition: all 0.5s linear;
+    color: #fff;
+    &:hover {
+      background: #888;
+      transition: all 0.5s linear;
+    }
+    &:focus {
+      color: #fff;
+      transition: all 0.5s linear;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  .btn {
+    font-weight: bold;
+    height: 59px;
+    border-radius: 0;
+    padding: 10px 25px 10px 25px;
+    margin: 0 0 0 -5px;
+  }
+  &.ng-hide {
+    opacity: 0;
+    transition: opacity 0.5s linear;
+  }
+}
+
+.reset {
+  position: absolute;
+  left: 0;
+  top: calc(50% - 50px);
+  button {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.2);
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+    
+  }
+}
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
