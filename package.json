@@ -1,10 +1,7 @@
 {
   "name": "colourTest",
-  "version": "0.0.0",
+  "version": "0.3",
   "dependencies": {},
-  "scripts": {
-    "test": "gulp test"
-  },
   "devDependencies": {
     "gulp": "~3.9.0",
     "gulp-autoprefixer": "~2.3.1",
